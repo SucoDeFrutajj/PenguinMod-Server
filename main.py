@@ -3,14 +3,14 @@ from cloudlink import server
 from cloudlink.server.protocols import clpv4
 
 if __name__ == "__main__":
-    # 1. Inicializa o servidor moderno
+    # Inicializa o servidor moderno v0.2.0
     my_server = server()
     
-    # 2. Ativa o protocolo clpv4 (essencial para o PenguinMod se conectar)
+    # Ativa o protocolo clpv4 que o PenguinMod exige
     protocol = clpv4(my_server)
     
-    # 3. Captura a porta gerada pelo Render
+    # Pega a porta automática do Render
     port = int(os.environ.get("PORT", 3000))
     
-    # 4. Coloca o servidor no ar na porta correta
+    # Coloca o servidor no ar
     my_server.run(port=port)
